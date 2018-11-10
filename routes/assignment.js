@@ -46,7 +46,7 @@ module.exports = {
                         if (err) {
                             return res.status(500).send(err);
                         }   
-                        // send the player's details to the database  
+                        // send the assignment's details to the database  
                         let addquery = "INSERT INTO `assignments` (`assignment_number`, `course_code`, `module_code`, `lecturer_code`, `release_date`, `assignment_title`, `content`, `due_date`, `image`) VALUES ('" +
                             assignment_number + "', '" + course_code + "', '" + module_code + "', '" + lecturer_code + "', '" + release_date + "', '" + assignment_title + "', '" + content + "', '" + due_date + "', '" + image_name + "')";
                         db.query(addquery, (err, result) => {
@@ -73,7 +73,7 @@ module.exports = {
             if (err) {
                 return res.status(500).send(err);
             }
-            res.render('edit-player.ejs', {
+            res.render('edit-assignment.ejs', {
                 title: "Edit  Assignment"
                 ,assignment: result[0]
                 ,message: ''
@@ -90,11 +90,11 @@ module.exports = {
         let assignment_title = req.body.assignment_title;
         let content = req.body.content;
         let due_date = req.body.due_date;
-        let remark = req.body.remark;
+       let image = req.body.image;
 
 
-        let query = "UPDATE `assignments` SET `Assignment Number` = '" + assignment_number + "', `Course Code` = '" + course_code + "', `Module Code` = '" + module_code + "', `Lecturer Code` = '" + lecturer_code + 
-            "', `Release Date` = '" + release_date + "', `Assignment Title` = '" + assignment_title + "', `Content` = '" + content + "', `Due Date` = '" + due_date + "', `Image` = '" + image + "' WHERE `assignments`.`id` = '" + assignmentId + "'";
+        let query = "UPDATE `assignments` SET `assignment_number` = '" + assignment_number + "', `course_code` = '" + course_code + "', `module_code` = '" + module_code + "', `lecturer_code` = '" + lecturer_code + 
+            "', `release_date` = '" + release_date + "', `assignment_title` = '" + assignment_title + "', `content` = '" + content + "', `due_date` = '" + due_date + "', `image` = '" + image + "' WHERE `assignments`.`id` = '" + assignmentId + "'";
         db.query(query, (err, result) => {
             if (err) {
                 return res.status(500).send(err);
