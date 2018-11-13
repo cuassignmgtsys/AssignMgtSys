@@ -33,7 +33,8 @@
                             <td>
                                 <a href="/edit/<%= assignment.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
                                 <a href="/delete/<%= assignment.id %>" class="btn btn-sm btn-danger">Delete</a>
-                                <a href="/submit_work/<%= assignment.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Work Submit</a>                                                            
+                                <a href="/work_submit/<%= assignment.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Work Submit</a>
+                                <a href="/mark_submit/<%= assignment.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">Mark Submit</a>                                                                
                             </td>
                         </tr>
                     <% }) %>

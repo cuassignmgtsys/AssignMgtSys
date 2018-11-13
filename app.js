@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 
 const {getHomePage} = require('./routes/index');
-const {addAssignmentPage, addAssignment, deleteAssignment, editAssignment, editAssignmentPage} = require('./routes/assignment');
+const {addAssignmentPage, addAssignment, deleteAssignment, editAssignment, editAssignmentPage, submitWork, submitWorkPage, getWorkPage, submitMark, submitMarkPage} = require('./routes/assignment');
 const port = 2000;
 
 // create connection to database
@@ -42,9 +42,13 @@ app.get('/', getHomePage);
 app.get('/add', addAssignmentPage);
 app.get('/edit/:id', editAssignmentPage);
 app.get('/delete/:id', deleteAssignment);
+app.get('/submit_work/:id', submitWorkPage);
+app.get('/submit_work', getWorkPage);
+app.get('/submit_mark/:id', submitMarkPage);
 app.post('/add', addAssignment);
 app.post('/edit/:id', editAssignment);
-
+app.post('/submit_work/:id', submitWork);
+app.post('/submit_mark/:id', submitMark);
 
 // set the app to listen on the port
 app.listen(port, () => {

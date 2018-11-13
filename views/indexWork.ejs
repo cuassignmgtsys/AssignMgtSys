@@ -1,0 +1,44 @@
+<% include partials/header.ejs %>
+    <div class="table-wrapper">
+        <% if (works.length > 0) {%>
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Assignment Number</th>
+                        <th scope="col">Student Number</th>
+                        <th scope="col">Work Submit Date</th>
+                        <th scope="col">Work File</th>                 
+                        <th scope="col">Lecturer Code</th>
+                        <th scope="col">Mark Submit Date</th>
+                        <th scope="col">Mark Score</th>                        
+                        <th scope="col">Mark File</th>                                     
+                    </tr>
+                </thead>
+                <tbody>
+                    <% works.forEach((work, index) => { %>
+                        <tr>
+                            <th scope="row"><%= work.id %></th>
+                         
+                            <td><%= work.assignment_number %></td>
+                            <td><%= work.student_number %></td>
+                            <td><%= work.work_submit_date %></td>
+                            <td><img src="/assets/img/<%= work.work_file %>" class="rounded-circle work-img" alt=""></td>                             
+                            <td><%= work.lecturer_code %></td>
+                            <td><%= work.mark_submit_date %></td>
+                            <td><%= work.mark_score %></td>                            
+                            <td><img src="/assets/img/<%= work.mark_file %>" class="rounded-circle work-img" alt=""></td>                              
+                            <td>
+                                <a href="/submit_mark/<%= work.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Mark Submit</a>                                                                
+                            </td>                            
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="text-center">No work found. Go <a href="/submit_work" >here</a> to upload work.</p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>

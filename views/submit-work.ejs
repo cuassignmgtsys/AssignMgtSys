@@ -1,0 +1,29 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <form class="submit-work-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="assignment_number" id="assignment-number" placeholder="Assignment Number" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="student_number" id="student-number" placeholder="Student Number" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="date" class="form-control" name="work_submit_date" id="work-submit-date" placeholder="Work Submit Date" required>
+                </div>
+            </div>
+            <div>
+                <div class="col-md-12">
+                    <label for="work-file"><b>Work File</b?</label><br>
+                    <input type="file" name="work_file" id="work-file" class="" required>
+                </div>
+            </div>            
+            <button type="submit" class="btn btn-primary float-right">Submit Work File</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
