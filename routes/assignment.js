@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+
 module.exports = {
     addAssignmentPage: (req, res) => {
         res.render('add-assignment.ejs', {
@@ -53,7 +54,7 @@ module.exports = {
                             if (err) {
                                 return res.status(500).send(err);
                             }
-                            res.redirect('/');
+                            res.redirect('/home');
                         });
                     });
                 } else {
@@ -99,7 +100,7 @@ module.exports = {
             if (err) {
                 return res.status(500).send(err);
             }
-            res.redirect('/');
+            res.redirect('/home');
         });
     },
     deleteAssignment: (req, res) => {
@@ -122,7 +123,7 @@ module.exports = {
                     if (err) {
                         return res.status(500).send(err);
                     }
-                    res.redirect('/');
+                    res.redirect('/home');
                 });
             });
         }); 

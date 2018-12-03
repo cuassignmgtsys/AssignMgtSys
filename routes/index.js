@@ -5,7 +5,7 @@ module.exports = {
         // execute query
         db.query(query, (err, result) => {
             if (err) {
-                res.redirect('/');
+                res.redirect('/home');
             }
             res.render('index.ejs', {
                 title: "Welcome to AssignMgtSys | View Assignments"
