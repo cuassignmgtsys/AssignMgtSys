@@ -2,6 +2,34 @@ const fs = require('fs');
 
 
 module.exports = {
+
+    searchHistoryPage: (req, res) => {
+        res.render('search-history.ejs', {
+            title: "Welcome to AssignMgtSys | Login lecturer"
+            ,message: ''
+        });
+    },
+
+    searchHistory: (req, res) => {
+        let student_number = req.body.student_number;
+        let searchQuery = "SELECT * FROM `works` WHERE `student_number` = '" + student_number +"'";
+        db.query(searchQuery, (err, result) => {
+            if(err){
+                return res.status(500).send(err);
+            }
+            res.render('indexHistory.ejs', {
+                title: "Search Assignment History"
+                ,works:result
+                ,message:''
+            });  
+
+//            res.redirect('/search_history');    
+ //           console.log(result);
+        });
+
+    },
+
+
     addAssignmentPage: (req, res) => {
         res.render('add-assignment.ejs', {
             title: "Welcome to AssignMgtSys | Add a new assignment"

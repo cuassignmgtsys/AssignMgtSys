@@ -1,4 +1,9 @@
 <% include partials/header.ejs %>
+<nav class="navbar navbar-light bg-light">
+        <a class="float-left" href="/add" title="Add a New Assignment" >Add a New Assignment</a>    
+        <a class="float-right" href="/home" title="Return to Home Page">Return to Home Page</a> 
+        <a class="float-right" href="/search_history" title="Search Assignment History">Search Assignment History</a>
+</nav> 
     <div class="table-wrapper">
         <% if (assignments.length > 0) {%>
             <table class="table table-hovered">

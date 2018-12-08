@@ -9,7 +9,7 @@ const app = express();
 
 const {getHomePage} = require('./routes/index');
 const {getLoginPage, loginPage, registerLecturerPage, registerLecturer, registerStudentPage, registerStudent, loginLecturerPage, loginLecturer, loginStudentPage, loginStudent} = require('./routes/login');
-const {addAssignmentPage, addAssignment, deleteAssignment, editAssignment, editAssignmentPage, submitWork, submitWorkPage, getWorkPage, submitMark, submitMarkPage} = require('./routes/assignment');
+const {searchHistoryPage, searchHistory, addAssignmentPage, addAssignment, deleteAssignment, editAssignment, editAssignmentPage, submitWork, submitWorkPage, getWorkPage, submitMark, submitMarkPage} = require('./routes/assignment');
 const port = 2000;
 
 
@@ -54,6 +54,7 @@ app.get('/register_student', registerStudentPage);
 app.get('/login_lecturer', loginLecturerPage);
 app.get('/login_student', loginStudentPage);
 app.get('/', loginPage);
+app.get('/search_history', searchHistoryPage);
  
 app.post('/add', addAssignment);
 app.post('/edit/:id', editAssignment);
@@ -63,6 +64,7 @@ app.post('/register_lecturer', registerLecturer);
 app.post('/register_student', registerStudent);
 app.post('/login_lecturer', loginLecturer);
 app.post('/login_student', loginStudent);
+app.post('/search_history', searchHistory);
 
 
 // set the app to listen on the port
