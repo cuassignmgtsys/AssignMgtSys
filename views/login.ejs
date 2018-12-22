@@ -1,0 +1,19 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <br><br>
+        <p><font size="5"><b>LECTURER:</b></font></p>
+        <p class="text-center"><a href="/login_lecturer" style="color:rgb(5, 67, 238)">Have an existing LECTURER account? Click here to Login</a></p>         
+        <p class="text-center"><a href="/register_lecturer" style="color:rgb(9, 211, 9)">No account yet? Click here to Register a LECTURER Account</a></p> 
+        <hr width="100%" align="left" color='black' noshade> 
+
+        <p><font size="5"><b>STUDENT:</b></font></p>
+        <p class="text-center"><a href="/login_student" style="color:rgb(255, 0, 0)">Have an existing STUDENT account? Click here to Login</a></p>         
+        <p class="text-center"><a href="/register_student" style="color:rgb(31, 25, 28)">No account yet? Click here to Register a STUDENT Account</a></p> 
+        <hr width="100%" align="left" color='black' noshade>         
+
+</div>
+</body>
+</html>
